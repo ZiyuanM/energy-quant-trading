@@ -19,3 +19,4 @@ Based on backtesting results, the strategy achieved:
 ## How to Run
 1. Install dependencies: `pip install -r requirements.txt`
 2. Run the backtest: `python pairs_trading.py`
+![Equity Curve](equity_curve.png)
