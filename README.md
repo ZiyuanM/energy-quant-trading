@@ -1,22 +1,19 @@
 # energy-quant-trading
 A statistical arbitrage strategy using cointegration to trade US energy pairs (XOM/CVX).
-# Energy Sector Statistical Arbitrage (Pairs Trading)
+# Energy Sector Quantitative Research Lab
+### Statistical Arbitrage & Mean Reversion in US Energy Majors
 
-This project implements a quantitative mean-reversion strategy focused on the US Energy sector. Specifically, it analyzes the relationship between **Exxon Mobil (XOM)** and **Chevron (CVX)**.
+## Project Overview
+This repository contains a quantitative framework for identifying and trading cointegrated pairs within the US Energy sector. The project evolved through three research phases:
 
-## Performance Metrics (2023 - 2026)
-Based on backtesting results, the strategy achieved:
-* **Annualized Return:** 14.53%
-* **Sharpe Ratio:** 1.27
-* **Max Drawdown:** -9.00%
-* **Calmar Ratio:** 1.61
+1. **Phase 1: Proof of Concept**: Established a base mean-reversion model for XOM/CVX.
+2. **Phase 2: Risk Management**: Integrated a rolling volatility filter and a 4-sigma Stop-Loss to manage structural decoupling risks.
 
-## How it Works
-1. **Cointegration:** Uses the Engle-Granger test to find "tethered" price pairs.
-2. **Z-Score Signals:** Enters trades when the price spread deviates by 2 standard deviations.
-3. **Risk Management:** Includes automated exit signals and drawdown monitoring.
+## Key Research Findings
+* **Strongest Sector Tether**: Chevron (CVX) showed the most consistent cointegration across the sector.
+* **The "Volatility Guard"**: Implementing a volatility gate successfully prevented entries during the 2024 decoupling of CVX/VLO.
 
-## How to Run
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run the backtest: `python pairs_trading.py`
-![Equity Curve](equity_curve.png)
+## Technical Stack
+- **Data**: Yahoo Finance API
+- **Statistics**: Statsmodels (OLS, Engle-Granger Cointegration)
+- **Visualization**: Seaborn Heatmaps & Matplotlib Equity Curves
